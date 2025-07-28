@@ -15,6 +15,41 @@ def split_multicolumn(col_series):
             result_df.at[idx, option] = 1.
     return result_df[options]
 
+# def map_region(country):
+#     asian_countries = ["Sri Lanka", "India", "Bangladesh", "Pakistan", "Nepal", "Indonesia", "Philippines", "Vietnam"]
+#     european_countries = ["Germany", "France", "Spain", "Italy", "Netherlands", "Sweden", "Poland"]
+#     north_america = ["United States", "Canada"]
+    
+#     if country in asian_countries:
+#         return "Asia"
+#     elif country in european_countries:
+#         return "Europe"
+#     elif country in north_america:
+#         return "North America"
+#     elif country == "Other":
+#         return "Other"
+#     else:
+#         return "Other"
+
+
+# def map_region(country):
+#     asia = [
+#         'Sri Lanka', 'India', 'Bangladesh', 'Pakistan', 'Nepal',
+#         'Malaysia', 'Philippines', 'Vietnam', 'Indonesia', 'Thailand',
+#         'Singapore', 'China', 'Japan', 'South Korea'
+#     ]
+#     europe = [
+#         'Germany', 'United Kingdom', 'France', 'Netherlands',
+#         'Poland', 'Italy', 'Spain', 'Sweden', 'Ireland', 'Austria',
+#         'Finland', 'Norway', 'Belgium', 'Denmark', 'Czech Republic'
+#     ]
+#     if country in asia:
+#         return 'Asia'
+#     elif country in europe:
+#         return 'Europe'
+#     else:
+#         return 'Other'
+
 def shorten_categories(categories, cutoff):
     categorical_map = {}
     for i in range(len(categories)):
@@ -23,6 +58,11 @@ def shorten_categories(categories, cutoff):
         else:
             categorical_map[categories.index[i]] = 'Other'
     return categorical_map
+
+def age_process(val):
+    if val == "45-54 years old" or val == "55-64 years old":
+        return "Over 45"
+    return val
 
 def age_process(val):
     if val == "45-54 years old" or val == "55-64 years old":
