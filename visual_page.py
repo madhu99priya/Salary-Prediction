@@ -245,16 +245,16 @@ def visual_page():
     st.markdown("## Age :birthday:")
     plot_age(df)
 
-    st.markdown("## Remote Work :airplane_departure:")
+    st.markdown("## Remote Work :🏢")
     plot_remotework(df)
 
-    st.markdown("## Education Level :female-teacher:")
+    st.markdown("## Education Level :🎓")
     plot_edlevel(df)
 
-    st.markdown("## Country :flag-vn:")
+    st.markdown("## Country :🚩")
     plot_country(df)
 
-    st.markdown("## Years of Experience :calendar:")
+    st.markdown("## Years of Experience :📅")
     plot_yearscodepro(df)
     
     st.markdown("## Developer Type :computer:")

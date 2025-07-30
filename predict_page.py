@@ -10,27 +10,27 @@ def load_model():
 
 def predict_page():
     model = load_model()
-    st.header("Salary Prediction :thinking_face:")
+    st.header("Salary Prediction :🤔")
     st.write("Predict salary base on developer's skill, position, experience.")
 
     # RemoteWork
-    st.markdown("## On-site/Remote :airplane_departure:")
+    st.markdown("### On-site Work :🏢")
     RemoteWork = st.selectbox("On-site, Remote or Hybrid?", ['Fully remote', 'Hybrid (some remote, some in-person)',
        'Full in-person'], key=1)
 
     # EdLevel
-    st.markdown("## Education Level :female-teacher:")
+    st.markdown("### Education Level :🎓 ")
     EdLevel = st.selectbox("Select your education level", ['Bachelor’s degree', 'Master’s degree', 'Post grad', 'Less than a Bachelors'], key=2)
 
     # YearsCodePro
-    st.markdown("## Years of experience :calendar:")
+    st.markdown("## Years of experience :📅")
     YearsCodePro = st.slider("Select years of experience", min_value=0, max_value=46, step=1, value=10)
     if YearsCodePro == 0:
         YearsCodePro = 0.5
     YearsCodePro = float(YearsCodePro)
 
     # Country
-    st.markdown("## Country :flag-vn:")
+    st.markdown("### Country: 🚩")
     Country = st.selectbox("Select your country", config.COUNTRY, key=3)
 
     # Age

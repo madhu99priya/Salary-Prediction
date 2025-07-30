@@ -1,5 +1,5 @@
 DATA_PATH = "data/survey_results_public.csv"
-CKPT_PATH = "random_forest_pipeline.joblib"
+CKPT_PATH = "linear_regression_pipeline.joblib"
 
 FEATURE_LIST = ["RemoteWork", "EdLevel", "YearsCodePro", "DevType", "LanguageHaveWorkedWith", "PlatformHaveWorkedWith", 
 "ToolsTechHaveWorkedWith",
@@ -8,8 +8,8 @@ FEATURE_LIST = ["RemoteWork", "EdLevel", "YearsCodePro", "DevType", "LanguageHav
 LANGUAGE = ['JavaScript', 'HTML/CSS', 'SQL',
        'TypeScript', 'Python', 'Bash/Shell (all shells)', 'Java', 'C#', 'PHP', 'Go', 'C++',
        'PowerShell']
-PLATFORM = ['Amozon Web Services(AWS)', 'Microsoft Azure', 'Google Cloud', 'Cloudflare', 'Oracle Cloud Infrastructure (OCI)', 'Digital Ocean']
-TOOLS = ['Docker', 'npm', 'Homebrew', 'Yarn', 'Kubernetes', 'Ansible' , 'Grandle', 'Make', 'Pip']
+PLATFORM = ['Amazon Web Services (AWS)', 'Microsoft Azure', 'Google Cloud', 'Cloudflare', 'Netlify', 'Firebase']
+TOOLS = ['Docker', 'npm', 'Homebrew', 'Yarn', 'Kubernetes', 'Ansible' , 'Grandle', 'Make', 'Pip', 'Vite' , 'Terraform']
 TYPES = ['Developer, full-stack', 'Developer, back-end', 'Developer, front-end',
        'DevOps specialist', 'Cloud infrastructure engineer',
        'Developer, desktop or enterprise applications', 'Developer, mobile',
@@ -28,7 +28,7 @@ COLUMNS = ['RemoteWork', 'EdLevel', 'YearsCodePro', 'Country', 'Age',
        'Data scientist or machine learning specialist',
        'Engineer, site reliability', 'Data engineer', 'Developer, AI', 'JavaScript', 'HTML/CSS', 'SQL',
        'TypeScript', 'Python', 'Bash/Shell (all shells)', 'Java', 'C#', 'PHP', 'Go', 'C++',
-       'PowerShell', 'Docker', 'npm', 'Homebrew', 'Yarn', 'Kubernetes', 'Ansible' , 'Grandle', 'Make', 'Pip', "Amazon Web Services (AWS)", 'Microsoft Azure', 'Google Cloud', 'Cloudflare', 'Oracle Cloud Infrastructure (OCI)', 'Digital Ocean']
+       'PowerShell', 'Docker', 'npm', 'Homebrew', 'Yarn', 'Kubernetes', 'Ansible' , 'Grandle', 'Make', 'Pip', 'Vite' , 'Terraform', "Amazon Web Services (AWS)", 'Microsoft Azure', 'Google Cloud', 'Cloudflare', 'Netlify', 'Firebase']
 COUNTRY = ['United Kingdom of Great Britain and Northern Ireland',
        'United States of America', 'Other', 'Austria', 'Italy', 'Canada',
        'Germany', 'Poland', 'Israel', 'Netherlands', 'France', 'Spain',
