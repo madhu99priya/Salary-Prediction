@@ -1,54 +1,16 @@
-# Helper function help clean preprocess feature column
+# preprocess.py
 
 def split_multicolumn(col_series):
     result_df = col_series.to_frame()
     options = []
-    # Iterate over the column
-    for idx, value  in col_series[col_series.notnull()].items():
-        # Break each value into list of options
+    for idx, value in col_series[col_series.notnull()].items():
         for option in value.split(';'):
-            # Add the option as a column to result
-            if not option in result_df.columns:
+            option = option.strip()  # Strip leading/trailing spaces
+            if option not in result_df.columns:
                 options.append(option)
-                result_df[option] = 0.
-            # Mark the value in the option column as True
-            result_df.at[idx, option] = 1.
+                result_df[option] = 0.0
+            result_df.at[idx, option] = 1.0
     return result_df[options]
-
-# def map_region(country):
-#     asian_countries = ["Sri Lanka", "India", "Bangladesh", "Pakistan", "Nepal", "Indonesia", "Philippines", "Vietnam"]
-#     european_countries = ["Germany", "France", "Spain", "Italy", "Netherlands", "Sweden", "Poland"]
-#     north_america = ["United States", "Canada"]
-    
-#     if country in asian_countries:
-#         return "Asia"
-#     elif country in european_countries:
-#         return "Europe"
-#     elif country in north_america:
-#         return "North America"
-#     elif country == "Other":
-#         return "Other"
-#     else:
-#         return "Other"
-
-
-# def map_region(country):
-#     asia = [
-#         'Sri Lanka', 'India', 'Bangladesh', 'Pakistan', 'Nepal',
-#         'Malaysia', 'Philippines', 'Vietnam', 'Indonesia', 'Thailand',
-#         'Singapore', 'China', 'Japan', 'South Korea'
-#     ]
-#     europe = [
-#         'Germany', 'United Kingdom', 'France', 'Netherlands',
-#         'Poland', 'Italy', 'Spain', 'Sweden', 'Ireland', 'Austria',
-#         'Finland', 'Norway', 'Belgium', 'Denmark', 'Czech Republic'
-#     ]
-#     if country in asia:
-#         return 'Asia'
-#     elif country in europe:
-#         return 'Europe'
-#     else:
-#         return 'Other'
 
 def shorten_categories(categories, cutoff):
     categorical_map = {}
@@ -58,11 +20,6 @@ def shorten_categories(categories, cutoff):
         else:
             categorical_map[categories.index[i]] = 'Other'
     return categorical_map
-
-def age_process(val):
-    if val == "45-54 years old" or val == "55-64 years old":
-        return "Over 45"
-    return val
 
 def age_process(val):
     if val == "45-54 years old" or val == "55-64 years old":
@@ -79,7 +36,7 @@ def clean_education(x):
     return 'Less than a Bachelors'
 
 def YearCodeProProcess(x):
-    if x ==  'More than 50 years':
+    if x == 'More than 50 years':
         return 50
     if x == 'Less than 1 year':
         return 0.5
