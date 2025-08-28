@@ -55,7 +55,7 @@ def load_df():
     # Languages
     language = split_multicolumn(df["LanguageHaveWorkedWith"])
     language_sum = language.sum().sort_values(ascending=False)
-    keep_col = language_sum[language_sum.values >= 2000].index
+    keep_col = language_sum[language_sum.values >= 1000].index
     language = language[keep_col]
     df = pd.concat([df, language], axis=1)
     df.drop(["LanguageHaveWorkedWith"], axis=1, inplace=True)
@@ -63,7 +63,7 @@ def load_df():
     # Platforms
     platform = split_multicolumn(df["PlatformHaveWorkedWith"])
     platform_sum = platform.sum().sort_values(ascending=False)
-    keep_col = platform_sum[platform_sum.values >= 2000].index
+    keep_col = platform_sum[platform_sum.values >= 500].index
     platform = platform[keep_col]
     df = pd.concat([df, platform], axis=1)
     df.drop(["PlatformHaveWorkedWith"], axis=1, inplace=True)
@@ -71,7 +71,7 @@ def load_df():
     # Tools
     tool = split_multicolumn(df["ToolsTechHaveWorkedWith"])
     tool_sum = tool.sum().sort_values(ascending=False)
-    keep_col = tool_sum[tool_sum.values >= 5000].index
+    keep_col = tool_sum[tool_sum.values >= 1000].index
     tool = tool[keep_col]
     df = pd.concat([df, tool], axis=1)
     df.drop(["ToolsTechHaveWorkedWith"], axis=1, inplace=True)

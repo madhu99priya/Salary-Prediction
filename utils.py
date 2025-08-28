@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn import metrics 
-import numpy as np  # You’ll need this for square root
+import numpy as np 
 
 def evaluate(y_true, y_pred):
     mse = metrics.mean_squared_error(y_true=y_true, y_pred=y_pred)
