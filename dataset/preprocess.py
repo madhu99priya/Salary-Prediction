@@ -1,5 +1,3 @@
-# preprocess.py
-
 def split_multicolumn(col_series):
     result_df = col_series.to_frame()
     options = []
